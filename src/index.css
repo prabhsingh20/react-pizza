@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .input {
+    @apply rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-yellow-400 md:px-6 md:py-3;
+  }
+
+  .loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background:
+      radial-gradient(farthest-side, #000000 94%, #0000) top/8px 8px no-repeat,
+      conic-gradient(#0000 30%, #000000);
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      #0000 calc(100% - 8px),
+      #000 0
+    );
+    animation: s3 1s infinite linear;
+  }
+
+  @keyframes s3 {
+    100% {
+      transform: rotate(1turn);
+    }
+  }
+}
